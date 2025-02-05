@@ -1,13 +1,8 @@
 package com.study01.game;
 
 public class GameRunner {
-    // MarioGame game;
-    
-    // public GameRunner(MarioGame game) {
-    //     this.game = game;
-    // }
-    private SuperContraGame game;
-    public GameRunner(SuperContraGame game) {
+    private GamingConsole game;
+    public GameRunner(GamingConsole game) {
         this.game = game;
     }
 
