@@ -7,9 +7,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class App02HelloSpring {
     public static void main(String[] args) {
+
         // 1. Spring Context를 실행
-        var context = 
-            new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+        try(var context =  // try-with-resources 구문으로 close()를 자동 호출
+        new AnnotationConfigApplicationContext
+        (HelloWorldConfiguration.class)) {
+
         // 2. Spring 에서 관리할 것을 설정
         //   (1) 설정 클래스(@Configuration)를 사용하여 빈을 정의하는 방식
         //   (2) 설정 파일을 이용하는 방식
@@ -45,6 +48,8 @@ public class App02HelloSpring {
         Arrays.stream(context.getBeanDefinitionNames())
             .forEach(name -> System.out.println("스프링에 의해 관리되는 모든 Bean의 이름: " + name));
         }
+
+        };
 
     
 } 
