@@ -1,4 +1,4 @@
-package com.jakarta_CDI_study;
+package com.study07;
 
 
 import java.util.Arrays;
